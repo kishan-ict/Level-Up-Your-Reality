@@ -235,6 +235,18 @@ Distributed under the **MIT License**. See `LICENSE` for more information.
 
 ---
 
+---
+
+## ⚠️ Note
+
+This project may contain bugs, incomplete features, or configuration issues as it is actively being developed. If you find any mistakes, errors, or areas that can be improved — **please don't hesitate to reach out!**
+
+Your feedback genuinely helps make this better. 🙏
+
+📬 **Contact:** [kishanmpatil1@gmail.com](mailto:kishanmpatil1@gmail.com)
+
+---
+
 <div align="center">
 
 **Built with ❤️ for the grinders who never stop leveling up.**
