@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Anton&family=Space+Grotesk:wght@300;400;500;600;700&family=Silkscreen:wght@400;700&family=DotGothic16&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Silkscreen", "DotGothic16", sans-serif;
+  --font-mono: "Space Grotesk", monospace;
+  
+  --color-system-purple: #8B5CF6;
+  --color-system-blue: #3B82F6;
+  --color-system-black: #0A0A0A;
+  --color-system-zinc: #18181B;
+}
+
+@layer base {
+  body {
+    @apply bg-system-black text-zinc-100 selection:bg-system-purple/30;
+  }
+
+  h1, h2, h3 {
+    @apply font-display uppercase tracking-tighter;
+  }
+}
+
+@layer utilities {
+  .text-glow-purple {
+    text-shadow: 0 0 10px rgba(139, 92, 246, 0.5);
+  }
+  
+  .border-glow-purple {
+    box-shadow: 0 0 15px rgba(139, 92, 246, 0.15);
+  }
+
+  .system-gradient-text {
+    @apply bg-gradient-to-b from-white to-zinc-500 bg-clip-text text-transparent;
+  }
+
+  .brutalist-header {
+    @apply font-display uppercase tracking-[-0.05em] text-system-purple;
+    text-shadow: 0 0 10px rgba(139, 92, 246, 0.6), 0 0 20px rgba(139, 92, 246, 0.3);
+    line-height: 0.9;
+  }
+
+  .system-card {
+    @apply bg-zinc-900/40 backdrop-blur-md border border-zinc-800 rounded-lg p-4;
+  }
+
+  .neon-border {
+    @apply border-system-purple/50 shadow-[0_0_10px_rgba(139,92,246,0.2)];
+  }
+}
+
+/* Radar Chart Customization */
+.radar-grid line {
+  stroke: #27272a !important;
+}
+
+.radar-grid polygon {
+  fill: #18181b !important;
+  fill-opacity: 0.5 !important;
+}

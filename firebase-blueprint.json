@@ -1,0 +1,71 @@
+{
+  "entities": {
+    "User": {
+      "title": "User",
+      "description": "User profile and game stats",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string", "description": "Firebase Auth UID" },
+        "email": { "type": "string", "format": "email" },
+        "displayName": { "type": "string" },
+        "photoURL": { "type": "string" },
+        "xp": { "type": "integer", "description": "Current experience points" },
+        "level": { "type": "integer", "description": "Current level" },
+        "streak": { "type": "integer", "description": "Daily quest completion streak" },
+        "lastActive": { "type": "string", "format": "date-time" },
+        "stats": {
+          "type": "object",
+          "properties": {
+            "strength": { "type": "integer" },
+            "intelligence": { "type": "integer" },
+            "discipline": { "type": "integer" },
+            "social": { "type": "integer" }
+          }
+        }
+      },
+      "required": ["uid", "email", "xp", "level", "stats"]
+    },
+    "Quest": {
+      "title": "Quest",
+      "description": "A task for the user to complete",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "title": { "type": "string" },
+        "difficulty": { "type": "string", "enum": ["easy", "medium", "hard"] },
+        "xpReward": { "type": "integer" },
+        "statCategory": { "type": "string", "enum": ["strength", "intelligence", "discipline", "social"] },
+        "deadline": { "type": "string", "format": "date-time" },
+        "completed": { "type": "boolean" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["userId", "title", "difficulty", "xpReward", "statCategory", "completed"]
+    },
+    "Progress": {
+      "title": "Progress",
+      "description": "Daily progress log",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "date": { "type": "string", "format": "date" },
+        "xpGained": { "type": "integer" },
+        "levelReached": { "type": "integer" }
+      },
+      "required": ["userId", "date", "xpGained", "levelReached"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "User",
+      "description": "User profile and stats"
+    },
+    "/quests/{questId}": {
+      "schema": "Quest",
+      "description": "User quests"
+    },
+    "/progress/{progressId}": {
+      "schema": "Progress",
+      "description": "Daily progress tracking"
+    }
+  }
+}
