@@ -26,7 +26,7 @@
 
 ### 🎮 Turn your real life into an RPG. Track habits. Complete quests. Level up yourself.
 
-**[Live Demo](#) · [Report a Bug](../../issues) · [Request Feature](../../issues)**
+**[Live Demo](https://level-up-your-reality-tupn4ye.gamma.site/) · [Report a Bug](../../issues) · [Request Feature](../../issues)**
 
 </div>
 
